@@ -1,10 +1,7 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
-import Attendencepage from './pages/attendencepage'
-import {Route, Routes } from 'react-router-dom'
+import {BrowserRouter as Router,Route, Routes } from 'react-router-dom'
 import Dashboard from './pages/dashboard'
+import Attendencepage from './pages/attendencepage'
 import Notfound from './pages/notfound'
 
 function App() {
@@ -12,11 +9,13 @@ function App() {
 
   return (
     <>
+  
       <Routes>
-        <Route path='/' element={<Attendencepage />} />
-        <Route path='/dashboard' element={<Dashboard />} />
+        <Route path='/Students-attendance' element={<Dashboard />} />
+        <Route path='/Students-attendance/student' element={<Attendencepage />} />
         <Route path='*' element={<Notfound />} />
       </Routes> 
+   
     
     </>
   )

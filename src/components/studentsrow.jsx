@@ -1,15 +1,25 @@
-function Row  () {
-    return (
-        <>
-        <div className="bg-gray-50 px-6 py-4 flex justify-end gap-3">
-        <button className="border px-6 py-2 rounded-lg">Export CSV</button>
-        <button className="bg-indigo-600 text-white px-6 py-2 rounded-lg">
-          Save Attendance
+function StudentRow({ student }) {
+  return (
+    <tr className="border-b bg-green-50">
+      <td className="px-6 py-4">{student.roll}</td>
+      <td className="px-6 py-4">{student.name}</td>
+      <td className="px-6 py-4 text-center">
+        <button className={`px-4 py-1 rounded-full text-white ${
+          student.status === 'present' ? 'bg-green-500' : 'bg-red-500'
+        }`}>
+          {student.status === 'present' ? 'Present' : 'Absent'}
         </button>
-      </div>
-
-        </>
-    );
+      </td>
+      <td className="px-6 py-4">
+        <input
+          type="text"
+          placeholder="Add remarks..."
+          className="w-full px-2 py-1 border rounded"
+        />
+      </td>
+    </tr>
+  );
 }
 
-export default Row;
+export default  StudentRow;
+ 
